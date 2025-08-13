@@ -60,13 +60,13 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Moradias',
             colorByPoint: true,
             data: [
-                { name: 'Analfabetos', y: 500 },
-                { name: 'Ensino Fundamental incompleto', y: 1991 },
-                { name: 'Ensino Fundamental completo', y: 567 },
-                { name: 'Ensino Médio incompleto', y: 430 },
-                { name: 'Ensino Médio completo', y: 1592 },
-                { name: 'Superior incompleto', y: 198 },
-                { name: 'Superior completo', y: 597 }
+                { name: 'Analfabetos', y: 500, color: 'rgb(255, 0, 0)' },
+                { name: 'Ensino Fundamental incompleto', y: 1991, color: 'rgb(255, 127, 0)'},
+                { name: 'Ensino Fundamental completo', y: 567, color: 'rgb(255, 255, 0)' },
+                { name: 'Ensino Médio incompleto', y: 430, color: 'rgb(0, 255, 0)' },
+                { name: 'Ensino Médio completo', y: 1592, color: 'rgb(0, 255, 255)'  },
+                { name: 'Superior incompleto', y: 198, color: 'rgb(0, 0, 255)'  },
+                { name: 'Superior completo', y: 597, color: 'rgb(148, 0, 211)'  }
             ]
         }],
         credits: {
