@@ -1,0 +1,14 @@
+body{
+    font-family: 'sans-serif, helvetica, arial';
+    max-width: 297mm;
+    padding:10mm;
+}
+#grafico1,#grafico2,#grafico4{
+    display:block;
+}
+.grafico{
+    width:680px;
+    height:680px;
+    border:1px solid black;
+    margin:30px 0px;
+}
