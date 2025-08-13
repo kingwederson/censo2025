@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    Highcharts.chart('grafico-pie_tipo-de-moradia', {
+    Highcharts.chart('grafico-pie_genero', {
         chart: {
             type: 'pie',
             events: {
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const chart = this;
                     const series = chart.series[0];
                     const total = series.data.reduce((sum, point) => sum + point.y, 0);
-                    const textX = chart.plotWidth / 2 + chart.plotLeft;
+                    const textX = chart.plotWidth / 2.3 + chart.plotLeft;
                     const textY = chart.plotHeight / 2 + chart.plotTop;
 
                     if (chart.totalLabel) {
@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     chart.totalLabel = chart.renderer.text(
-                        total.toLocaleString('pt-BR'),
-                        textX,
-                        textY
-                    )
+                    'Total: <br> <b>' + total.toLocaleString('fr-FR') + '</b>',
+                    textX,
+                    textY,
+                    true // Permite HTML básico como <br>
+                )
                     .attr({
                         'text-anchor': 'middle',
                         'alignment-baseline': 'middle',
@@ -30,15 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         title: {
-            text: 'Censo 2025: Tipo de moradia'
+            text: 'Censo 2025: Gênero'
         },
         subtitle: {
-            text: 'O que os cidadãos responderam a: Qual o tipo de moradia?'
+            text: 'Informações de gênero nos domicílios que responderam ao Censo'
         },
         legend: {
-            align: 'left',
-            verticalAlign: 'middle',
-            layout: 'vertical'
+            align: 'center',
+            verticalAlign: 'bottom',
+            layout: 'horizontal',
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
@@ -59,11 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Moradias',
             colorByPoint: true,
             data: [
-                { name: 'Alugada', y: 539, color: '#e1fb19' },
-                { name: 'Cedida', y: 129, color: '#e18b19' },
-                { name: 'Própria', y: 1632,color: '#19fb8b' },
-                { name: 'Outros', y: 10, color: '#888' },
-                { name: 'Não responderam', y: 355, color: '#000' }
+                { name: 'Homens', y: 2675, color: 'rgb(44,175,254)' },
+                { name: 'Mulheres', y: 2853, color: 'rgb(255,99,132)' }
             ]
         }],
         credits: {

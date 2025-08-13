@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     chart.totalLabel = chart.renderer.text(
-                        total.toLocaleString('pt-BR'),
-                        textX,
-                        textY
-                    )
+                    'Total: <br> <b>' + total.toLocaleString('fr-FR') + '</b>',
+                    textX,
+                    textY,
+                    true // Permite HTML básico como <br>
+                )
                     .attr({
                         'text-anchor': 'middle',
                         'alignment-baseline': 'middle',
