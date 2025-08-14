@@ -11,7 +11,7 @@ Highcharts.chart('grafico-coluna_avaliacaocomparada', {
     credits: {
         enabled: true,
         href:"",
-            text:"Fonte: TSE",
+            text:"Fonte: Censo Municipal 2025",
             style:{
                 color:"#000",
                 fontSize: "0.6em",
@@ -20,7 +20,70 @@ Highcharts.chart('grafico-coluna_avaliacaocomparada', {
     xAxis: {
         categories: [
             'Saúde' , 'Educação' , 'Ação Social' , 'Esporte' , 'Cultura' , 'Lazer' , 'Turismo', 'Transporte', 'Obras e Urmanismo', 'Agropecuária', 'Meio Ambiente'
-        ]
+        ],
+    plotLines: [
+        {
+            color: '#888',      // Cor da linha
+            width: 2,           // Espessura
+            value: 0.5,         // Posição entre categorias (exemplo: entre Saúde e Educação)
+            zIndex: 5
+        },
+        {
+            color: '#888',      // Cor da linha
+            width: 2,           // Espessura
+            value: 1.5,         // Posição entre categorias (exemplo: entre Educação e Ação Social)
+            zIndex: 5
+        },
+        {
+            color: '#888',      // Cor da linha
+            width: 2,           // Espessura
+            value: 2.5,
+            zIndex: 5
+        },
+        {
+            color: '#888',      // Cor da linha
+            width: 2,           // Espessura
+            value: 3.5,
+            zIndex: 5
+        },
+        {
+            color: '#888',      // Cor da linha
+            width: 2,           // Espessura
+            value: 4.5,         // Entre Cultura e Lazer
+            zIndex: 5
+        },
+        {
+            color: '#888',
+            width: 2,
+            value: 5.5,
+            zIndex: 5
+        },
+        {
+            color: '#888',
+            width: 2,
+            value: 6.5,
+            zIndex: 5
+        },
+        {
+            color: '#888',
+            width: 2,
+            value: 7.5,
+            zIndex: 5
+        },
+        {
+            color: '#888',
+            width: 2,
+            value: 8.5,
+            zIndex: 5
+        },
+        {
+            color: '#888',
+            width: 2,
+            value: 9.5,
+            zIndex: 5
+        }
+        // Adicione mais linhas conforme necessário
+    ]
     },
     yAxis: {
         min: 0,
@@ -28,7 +91,7 @@ Highcharts.chart('grafico-coluna_avaliacaocomparada', {
             text: 'votação'
         },
         min: 0,
-        max: 1800
+        max: 1750
     },
     legend: {
         reversed: false
@@ -36,7 +99,7 @@ Highcharts.chart('grafico-coluna_avaliacaocomparada', {
     plotOptions: {
         column: {
             pointPadding: 0.05,   // Menor valor = barras mais largas
-            groupPadding: 0.05    // Menor valor = menos espaço entre grupos
+            groupPadding: 0.01    // Menor valor = menos espaço entre grupos
         },
         series: {
             stacking: null,
