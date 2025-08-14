@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    Highcharts.chart('grafico-pie_genero', {
+    Highcharts.chart('grafico-pie_transporte', {
         chart: {
             type: 'pie',
             events: {
@@ -15,11 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     chart.totalLabel = chart.renderer.text(
-                    'Total: <br> <b>' + total.toLocaleString('fr-FR') + '</b>',
-                    textX,
-                    textY,
-                    true // Permite HTML básico como <br>
-                )
+                        total.toLocaleString('pt-BR'),
+                        textX,
+                        textY
+                    )
                     .attr({
                         'text-anchor': 'middle',
                         'alignment-baseline': 'middle',
@@ -31,15 +30,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         title: {
-            text: 'Censo 2025: Gênero'
+            text: 'Censo 2025: Avaliação da gestão na pasta de Transporte',
         },
         subtitle: {
-            text: 'Informações de gênero nos domicílios que responderam ao Censo'
+            text: 'Como os representantes dos domicílios avaliam a gestão na pasta de Transporte?'
         },
         legend: {
             align: 'left',
-            verticalAlign: 'bottom',
-            layout: 'vertical',
+            verticalAlign: 'middle',
+            layout: 'vertical'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}:<br>{point.percentage:.2f}%<br>{point.y} 👤'
+                    format: '{point.name}:<br>{point.percentage:.2f}%<br>{point.y}'
                 },
                 showInLegend: true
             }
@@ -60,8 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Moradias',
             colorByPoint: true,
             data: [
-                { name: 'Homens', y: 2675, color: 'rgb(44,175,254)' },
-                { name: 'Mulheres', y: 2853, color: 'rgb(255,99,132)' }
+                { name: 'Ótimo', y: 365,color: '#198bfb' },
+                { name: 'Bom', y: 1447, color: '#19fb8b' },
+                { name: 'Regular', y: 353, color: '#e1fb19' },
+                { name: 'Péssimo', y: 145, color: '#e11b19' },
+                { name: 'Não responderam', y: 355, color: '#000' }
             ]
         }],
         credits: {

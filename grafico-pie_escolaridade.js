@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const chart = this;
                     const series = chart.series[0];
                     const total = series.data.reduce((sum, point) => sum + point.y, 0);
-                    const textX = chart.plotWidth / 2.3 + chart.plotLeft;
+                    const textX = chart.plotWidth / 2 + chart.plotLeft;
                     const textY = chart.plotHeight / 2 + chart.plotTop;
 
                     if (chart.totalLabel) {

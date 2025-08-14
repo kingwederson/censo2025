@@ -23,6 +23,8 @@ details{
     margin:7px 0px;
     padding:3px;
     break-inside: avoid;
+    display: inline-table;
+    width: 100%;
 }
 summary {
     list-style: none;
@@ -45,4 +47,21 @@ summary:before {
     display: inline-block;   /* Ícone ao lado do texto */
     margin-right: 10px;      /* Espaço à direita do ícone */
     order: 0;                /* Garante que o ícone venha antes do texto */
+}
+.highcharts-data-table{
+    color: black;
+    background-color: white;
+    width:100%
+}
+.highcharts-data-table th,
+.highcharts-data-table td {
+    font-style: normal; /* 'sans-serif' não é valor válido para font-style */
+    font-family: sans-serif;
+    padding: 0px 15px;
+}
+.highcharts-data-table th{
+    text-align: right;
+}
+.highcharts-data-table td{
+    text-align: right;
 }
