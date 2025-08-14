@@ -10,27 +10,46 @@
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         <script src="highcharts.js"></script>
-        <link rel="stylesheet" href="estilo.css">
+        <link id="estilogeral" rel="stylesheet" href="estilo.css">
+        <script>
+            var tempo = new Date();
+            document.getElementById("estilogeral").href = "estilo.css?v="+tempo.getTime();
+        </script>
     </head>
     <title>Censo Municipal 2025</title>
 </head>
 <body>
     <h1>Censo Municipal 2025</h1>
+    <details>
+        <summary><h2>Resultados por gênero</h2></summary>
+        <div class="grafico" id="grafico-pie_genero" style="width:800px; height:538px;"></div>
+        <script src="grafico-pie_genero.js"></script>
+    </details>
+    
+    <details>
+        <summary><h2>Resultados por faixa etária</h2></summary>
+        <div class="grafico" id="grafico-pie_faixa-etaria" style="width:800px; height:538px;"></div>
+        <script src="grafico-pie_faixa-etaria.js"></script>
+    </details>
 
-    <div class="grafico" id="grafico-pie_genero" style="width:800px; height:538px;"></div>
-    <script src="grafico-pie_genero.js"></script>
+    <details>
+        <summary><h2>Resultados por escolaridade</h2></summary>
+        <div class="grafico" id="grafico-pie_escolaridade" style="width:800px; height:538px;"></div>
+        <script src="grafico-pie_escolaridade.js"></script>
+        <!---->
+    </details>
 
-    <div class="grafico" id="grafico-pie_tipo-de-moradia" style="width:800px; height:538px;"></div>
-    <script src="grafico-pie_tipo-de-moradia.js"></script>
+    <details>
+        <summary><h2>Resultados por tipo de moradia</h2></summary>
+        <div class="grafico" id="grafico-pie_tipo-de-moradia" style="width:800px; height:538px;"></div>
+        <script src="grafico-pie_tipo-de-moradia.js"></script>
+    </details>
 
-    <div class="grafico" id="grafico-pie_contribuinte-de-iptu" style="width:800px; height:538px;"></div>
-    <script src="grafico-pie_contribuinte-de-iptu.js"></script>
-
-    <div class="grafico" id="grafico-pie_faixa-etaria" style="width:800px; height:538px;"></div>
-    <script src="grafico-pie_faixa-etaria.js"></script>
-
-    <div class="grafico" id="grafico-pie_escolaridade" style="width:800px; height:538px;"></div>
-    <script src="grafico-pie_escolaridade.js"></script>
+    <details>
+        <summary><h2>Resultados por contribuição de IPTU</h2></summary>
+        <div class="grafico" id="grafico-pie_contribuinte-de-iptu" style="width:800px; height:538px;"></div>
+        <script src="grafico-pie_contribuinte-de-iptu.js"></script>
+    </details>
 
     <!--
     

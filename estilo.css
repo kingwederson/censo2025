@@ -3,11 +3,46 @@ body{
     max-width: 297mm;
     padding:10mm;
 }
-h1{
+h1,h2{
     font-family: 'sans-serif';
 }
 div.grafico{
     border:1px solid black;
     margin:30px 0px;
     display: inline-block;
+}
+details[open] summary:before {
+    content: " ▼";
+    color:black;
+    font-size: 30px;
+}
+  
+details{
+    color: white;
+    border-radius: 5px;
+    margin:7px 0px;
+    padding:3px;
+    break-inside: avoid;
+}
+summary {
+    list-style: none;
+    padding: 10px 10px 10px 40px;
+    background-size: 30px;
+    font-weight: bold;
+    background-color: #e0d9d8;
+    color: #308e4e;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    display: flex;           /* Torna o summary um flex container */
+    align-items: center;     /* Alinha verticalmente */
+    gap: 10px;               /* Espaço entre ícone e texto */
+}
+
+summary:before {
+    content: '►';
+    color: black;
+    font-size: 30px;
+    display: inline-block;   /* Ícone ao lado do texto */
+    margin-right: 10px;      /* Espaço à direita do ícone */
+    order: 0;                /* Garante que o ícone venha antes do texto */
 }
