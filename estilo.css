@@ -4,7 +4,7 @@ body{
     padding:10mm;
 }
 h1,h2{
-    font-family: 'sans-serif';
+    font-family: sans-serif;
 }
 div.grafico{
     border:1px solid black;
