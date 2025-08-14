@@ -3,10 +3,10 @@ Highcharts.chart('grafico-coluna_avaliacaocomparada', {
         type: 'column'
     },
     title: {
-        text: 'Eleições Municipais: Bom Jardim de Minas'
+        text: 'Avaliação Comparada dos Serviços Públicos'
     },
     subtitle: {
-        text: 'votos para o cargo de prefeito municipal'
+        text: 'Como avaliaram os representantes dos domicílios os serviços públicos'
     },
     credits: {
         enabled: true,
