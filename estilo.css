@@ -1,14 +1,19 @@
 body{
-    font-family: 'sans-serif, helvetica, arial';
+    font-family: 'Premier League', sans-serif;
     max-width: 297mm;
     padding:10mm;
+    background-image: url('wallpaper.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    margin: auto;
 }
 h1,h2{
-    font-family: sans-serif;
+    font-family: 'Premier League Bold', sans-serif;
+    text-align: center;
 }
 div.grafico{
     border:1px solid black;
-    margin:30px 0px;
+    margin:30px 30px;
     display: inline-block;
 }
 details[open] summary:before {
@@ -25,13 +30,13 @@ details{
     break-inside: avoid;
     display: inline-table;
     width: 100%;
+    border: 1px solid #308e4e;
 }
 summary {
     list-style: none;
     padding: 10px 10px 10px 40px;
     background-size: 30px;
     font-weight: bold;
-    background-color: #e0d9d8;
     color: #308e4e;
     border-radius: 5px 5px 0 0;
     cursor: pointer;
@@ -64,4 +69,10 @@ summary:before {
 }
 .highcharts-data-table td{
     text-align: right;
+}
+p{
+    text-indent: 7ch;
+}
+p,li{
+    text-align: justify;
 }
