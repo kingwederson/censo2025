@@ -31,14 +31,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         title: {
-            text: 'Censo 2025: Gênero'
+            text: 'Censo 2025: Gênero *'
         },
         subtitle: {
-            text: 'Informações de gênero nos domicílios que responderam ao Censo'
+            text: '* As entrevistas contabilizaram 2847 homens e 2897 mulheres. Esses valores permitiram obter a densidade populacional por domicílio para <em>estimativa</em> do total de habitantes. Densidades: 1.07 homens/domicílios e 1.09 mulheres/domicílio.',
+            align: 'justify',        // esquerda, centro ou direita
+            verticalAlign: 'bottom',// posiciona embaixo do gráfico
+            y: 5 
         },
         legend: {
             align: 'left',
-            verticalAlign: 'bottom',
+            verticalAlign: 'middle',
             layout: 'vertical',
         },
         tooltip: {
@@ -57,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         series: [{
-            name: 'Moradias',
+            name: 'Habitantes',
             colorByPoint: true,
             data: [
-                { name: 'Homens', y: 2675, color: 'rgb(44,175,254)' },
-                { name: 'Mulheres', y: 2853, color: 'rgb(255,99,132)' }
+                { name: 'Homens', y: 2847+460, color: 'rgb(44,175,254)' },
+                { name: 'Mulheres', y: 2897+468, color: 'rgb(255,99,132)' }
             ]
         }],
         credits: {

@@ -31,10 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         title: {
-            text: 'Censo 2025: Escolaridade'
+            text: 'Censo 2025: Escolaridade *'
         },
         subtitle: {
-            text: 'Informações de escolaridade nos domicílios que responderam ao Censo'
+            text: '* As entrevistas contabilizaram paras as categorias de escolaridade de analfabetos, fundamental incompleto, fundamental completo, médio incompleto, médio completo, superior incompleto e superior completo respectivamente 469, 1979, 468, 397, 1755, 161 e 515 pessoas. Esses valores permitiram obter a densidade populacional por domicílio para <em>estimativa</em> do total de habitantes nestas categorias.',
+            align: 'justify',        // esquerda, centro ou direita
+            verticalAlign: 'bottom',// posiciona embaixo do gráfico
+            y: 5 
         },
         legend: {
             align: 'center',
@@ -51,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}:<br>{point.percentage:.2f}%<br>{point.y}'
+                    format: '{point.name}:<br><span style="font-size:1.5em">{point.percentage:.2f}%</span><br>{point.y}'
                 },
                 showInLegend: true
             }
@@ -60,13 +63,13 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Moradias',
             colorByPoint: true,
             data: [
-                { name: 'Analfabetos', y: 500, color: 'rgb(255, 0, 0)' },
-                { name: 'Ensino Fundamental incompleto', y: 1991, color: 'rgb(255, 127, 0)'},
-                { name: 'Ensino Fundamental completo', y: 567, color: 'rgb(255, 255, 0)' },
-                { name: 'Ensino Médio incompleto', y: 430, color: 'rgb(0, 255, 0)' },
-                { name: 'Ensino Médio completo', y: 1592, color: 'rgb(0, 255, 255)'  },
-                { name: 'Superior incompleto', y: 198, color: 'rgb(0, 0, 255)'  },
-                { name: 'Superior completo', y: 597, color: 'rgb(148, 0, 211)'  }
+                { name: 'Analfabetos', y: 545, color: 'rgb(255, 0, 0)' },
+                { name: 'Ensino Fundamental incompleto', y: 2299, color: 'rgb(255, 127, 0)'},
+                { name: 'Ensino Fundamental completo', y: 543, color: 'rgb(255, 255, 0)' },
+                { name: 'Ensino Médio incompleto', y: 461, color: 'rgb(0, 255, 0)' },
+                { name: 'Ensino Médio completo', y: 2039, color: 'rgb(0, 255, 255)'  },
+                { name: 'Superior incompleto', y: 187, color: 'rgb(0, 0, 255)'  },
+                { name: 'Superior completo', y: 598, color: 'rgb(148, 0, 211)'  }
             ]
         }],
         credits: {

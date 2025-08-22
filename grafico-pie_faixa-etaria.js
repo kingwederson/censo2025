@@ -31,10 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         title: {
-            text: 'Censo 2025: Faixa etária'
+            text: 'Censo 2025: Faixa etária *'
         },
         subtitle: {
-            text: 'Informações de faixa etária nos domicílios que responderam ao Censo'
+            text: '* As entrevistas contabilizaram paras as faixas etárias de 0-12, 13-17, 18-64 e 64+ respectivamente 745, 354, 3692 e 944 pessoas. Esses valores permitiram obter a densidade populacional por domicílio para <em>estimativa</em> do total de habitantes nestas categorias.',
+            align: 'justify',        // esquerda, centro ou direita
+            verticalAlign: 'bottom',// posiciona embaixo do gráfico
+            y: 5 
         },
         legend: {
             align: 'left',
@@ -51,19 +54,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}:<br>{point.percentage:.2f}%<br>{point.y}'
+                    format: '<span style="font-size:1.2em">{point.name}</span>:<br><span style="font-size:1.5em">{point.percentage:.2f}%</span><br>{point.y}'
                 },
                 showInLegend: true
             }
         },
         series: [{
-            name: 'Moradias',
+            name: 'Habitantes',
             colorByPoint: true,
             data: [
-                { name: 'De 0 a 12 anos', y: 788 },
-                { name: 'De 13 a 17 anos', y: 388 },
-                { name: 'De 18 a 64 anos', y: 3683 },
-                { name: 'Mais de 64 anos', y: 1241 }
+                { name: 'De 0 a 12 anos', y: 876 },
+                { name: 'De 13 a 17 anos', y: 411 },
+                { name: 'De 18 a 64 anos', y: 4289 },
+                { name: 'Mais de 64 anos', y: 1096 }
             ]
         }],
         credits: {
