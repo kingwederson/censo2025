@@ -24,17 +24,27 @@ Highcharts.chart('grafico-bar_deficiencia', {
     },
     tooltip: {
         valueSuffix: ' pessoas'
-    },plotOptions: {
-            column: {
-                innerSize: '60%',
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}<br>{point.y}'
-                },
-                showInLegend: true
-            }
+    },
+    plotOptions: {
+        column: {
+            innerSize: '60%',
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: `{point.y}<br>`
+            },
+            showInLegend: true
+        }
+    },
+        credits: {
+            enabled: true,
+            href:"https://bomjardimdeminas.mg.gov.br",
+                text:"Fonte: Censo Municipal 2025",
+                style:{
+                    color:"#000",
+                    fontSize: "0.6em",
+                }
         },
     series: [
         {
@@ -44,7 +54,8 @@ Highcharts.chart('grafico-bar_deficiencia', {
         {
             name: 'Visual',
             data: [418]
-        },{
+        },
+        {
             name: 'Intelectual',
             data: [144]
         },
@@ -53,7 +64,7 @@ Highcharts.chart('grafico-bar_deficiencia', {
             data: [129]
         },
         {
-            name: 'Algum tipo de deficiência',
+            name: 'Algum tipo de transtorno',
             data: [554],
             color: '#808080'
         }

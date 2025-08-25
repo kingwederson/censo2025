@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const chart = this;
                     const series = chart.series[0];
                     const total = series.data.reduce((sum, point) => sum + point.y, 0);
-                    const textX = chart.plotWidth / 2 + chart.plotLeft;
+                    const textX = chart.plotWidth / 2.1 + chart.plotLeft;
                     const textY = chart.plotHeight / 2 + chart.plotTop;
 
                     if (chart.totalLabel) {
@@ -15,11 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     chart.totalLabel = chart.renderer.text(
-                    'Total: <br> <b>' + total.toLocaleString('fr-FR') + '</b>',
-                    textX,
-                    textY,
-                    true // Permite HTML básico como <br>
-                )
+                        total.toLocaleString('pt-BR'),
+                        textX,
+                        textY
+                    )
                     .attr({
                         'text-anchor': 'middle',
                         'alignment-baseline': 'middle',
@@ -35,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         subtitle: {
             text: '* As entrevistas contabilizaram paras as categorias de escolaridade de analfabetos, fundamental incompleto, fundamental completo, médio incompleto, médio completo, superior incompleto e superior completo respectivamente 469, 1979, 468, 397, 1755, 161 e 515 pessoas. Esses valores permitiram obter a densidade populacional por domicílio para <em>estimativa</em> do total de habitantes nestas categorias.',
-            align: 'justify',        // esquerda, centro ou direita
-            verticalAlign: 'bottom',// posiciona embaixo do gráfico
+            align: 'justify',
+            verticalAlign: 'bottom',
             y: 5 
         },
         legend: {
@@ -45,7 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
             layout: 'horizontal',
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
+            pointFormat: '{series.name}: <b>{point.y:,.0f} ({point.percentage:.1f}%)</b>',
+            valueDecimals: 0,
+            valueSuffix: '',
+            valuePrefix: '',
+            valueFormatter: function() {
+                return this.y.toLocaleString('pt-BR');
+            }
         },
         plotOptions: {
             pie: {
@@ -54,7 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}:<br><span style="font-size:1.5em">{point.percentage:.2f}%</span><br>{point.y}'
+                    formatter: function() {
+                        return this.point.name + ':<br><span style="font-size:1.5em">' +
+                            this.percentage.toFixed(2) + '%</span><br>' +
+                            this.y.toLocaleString('pt-BR');
+                    }
                 },
                 showInLegend: true
             }
@@ -75,11 +84,11 @@ document.addEventListener('DOMContentLoaded', function () {
         credits: {
             enabled: true,
             href:"https://bomjardimdeminas.mg.gov.br",
-                text:"Fonte: Censo Municipal 2025",
-                style:{
-                    color:"#000",
-                    fontSize: "0.6em",
-                }
+            text:"Fonte: Censo Municipal 2025",
+            style:{
+                color:"#000",
+                fontSize: "0.6em",
+            }
         }
     });
 });

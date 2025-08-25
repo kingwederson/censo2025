@@ -6,6 +6,15 @@ body{
     background-repeat: repeat;
     background-attachment: fixed;
     margin: auto;
+    color:black;
+}
+section#conteudo{
+    background-image: url('Brasao_de_Bom_Jardim_de_Minas.png');
+    background-size: 180mm;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
 }
 h1,h2{
     font-family: 'Premier League Bold', sans-serif;
@@ -55,7 +64,7 @@ summary:before {
 }
 .highcharts-data-table{
     color: black;
-    background-color: white;
+    background-color: #ffffff00;
     width:100%
 }
 .highcharts-data-table th,
@@ -75,4 +84,11 @@ p{
 }
 p,li{
     text-align: justify;
+}
+img#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150mm;
+    height: auto;
 }

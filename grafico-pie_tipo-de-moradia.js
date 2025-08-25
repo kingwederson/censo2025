@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const chart = this;
                     const series = chart.series[0];
                     const total = series.data.reduce((sum, point) => sum + point.y, 0);
-                    const textX = chart.plotWidth / 2 + chart.plotLeft;
+                    const textX = chart.plotWidth / 2.2 + chart.plotLeft;
                     const textY = chart.plotHeight / 2 + chart.plotTop;
 
                     if (chart.totalLabel) {
@@ -59,11 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Moradias',
             colorByPoint: true,
             data: [
-                { name: 'Alugada', y: 539, color: '#e1fb19' },
-                { name: 'Cedida', y: 129, color: '#e18b19' },
-                { name: 'Própria', y: 1632,color: '#19fb8b' },
-                { name: 'Outros', y: 10, color: '#888' },
-                { name: 'Não responderam', y: 355, color: '#000' }
+                { name: 'Alugada', y: 518, color: '#e1fb19' },
+                { name: 'Cedida', y: 124, color: '#e18b19' },
+                { name: 'Própria', y: 1582,color: '#19fb8b' },
+                { name: 'Não responderam', y: 441, color: '#808080' }
             ]
         }],
         credits: {

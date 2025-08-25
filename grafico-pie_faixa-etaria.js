@@ -8,18 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     const series = chart.series[0];
                     const total = series.data.reduce((sum, point) => sum + point.y, 0);
                     const textX = chart.plotWidth / 2 + chart.plotLeft;
-                    const textY = chart.plotHeight / 2 + chart.plotTop;
+                    const textY = chart.plotHeight / 1.8 + chart.plotTop;
 
                     if (chart.totalLabel) {
                         chart.totalLabel.destroy();
                     }
 
                     chart.totalLabel = chart.renderer.text(
-                    'Total: <br> <b>' + total.toLocaleString('fr-FR') + '</b>',
-                    textX,
-                    textY,
-                    true // Permite HTML básico como <br>
-                )
+                        total.toLocaleString('pt-BR'),
+                        textX,
+                        textY
+                    )
                     .attr({
                         'text-anchor': 'middle',
                         'alignment-baseline': 'middle',
@@ -45,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
             layout: 'vertical'
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
+            pointFormatter: function () {
+                return `${this.series.name}: <b>${this.y.toLocaleString('pt-BR')} (${this.percentage.toFixed(1)}%)</b>`;
+            }
         },
         plotOptions: {
             pie: {
@@ -54,7 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '<span style="font-size:1.2em">{point.name}</span>:<br><span style="font-size:1.5em">{point.percentage:.2f}%</span><br>{point.y}'
+                    formatter: function () {
+                        return `<span style="font-size:1.2em">${this.point.name}</span>:<br><span style="font-size:1.5em">${this.percentage.toFixed(2)}%</span><br>${this.y.toLocaleString('pt-BR')}`;
+                    }
                 },
                 showInLegend: true
             }

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             layout: 'vertical'
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },
         plotOptions: {
             pie: {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}:<br>{point.percentage:.2f}%<br>{point.y}'
+                    format: '{point.name}:<br>{point.percentage:.2f}%}'
                 },
                 showInLegend: true
             }

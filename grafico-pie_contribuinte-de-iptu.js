@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             layout: 'vertical'
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
+            pointFormat: '{series.name}:<b> {point.percentage:.1f}%</b>'
         },
         plotOptions: {
             pie: {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}:<br>{point.percentage:.2f}%<br>{point.y}'
+                    format: '{point.name}:<br>{point.percentage:.2f}%<br>{point.y}',
                 },
                 showInLegend: true
             }
@@ -59,10 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Moradias',
             colorByPoint: true,
             data: [
-                { name: 'Sim', y: 1595,color: '#19fb8b' },
-                { name: 'Não', y: 698, color: '#e11b19' },
-                { name: 'Não sabe', y: 17, color: '#e1fb19' },
-                { name: 'Não responderam', y: 355, color: '#000' }
+                { name: 'Sim', y: 1541,color: '#19fb8b' },
+                { name: 'Não', y: 593, color: '#e11b19' },
+                { name: 'Não responderam', y: 531, color: '#e1fb19' }
             ]
         }],
         credits: {

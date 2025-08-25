@@ -15,11 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     chart.totalLabel = chart.renderer.text(
-                    'Total: <br> <b>' + total.toLocaleString('fr-FR') + '</b>',
-                    textX,
-                    textY,
-                    true // Permite HTML básico como <br>
-                )
+                        total.toLocaleString('pt-BR'),
+                        textX,
+                        textY
+                    )
                     .attr({
                         'text-anchor': 'middle',
                         'alignment-baseline': 'middle',
@@ -34,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
             text: 'Censo 2025: Gênero *'
         },
         subtitle: {
-            text: '* As entrevistas contabilizaram 2847 homens e 2897 mulheres. Esses valores permitiram obter a densidade populacional por domicílio para <em>estimativa</em> do total de habitantes. Densidades: 1.07 homens/domicílios e 1.09 mulheres/domicílio.',
-            align: 'justify',        // esquerda, centro ou direita
-            verticalAlign: 'bottom',// posiciona embaixo do gráfico
+            text: '* As entrevistas contabilizaram 2847 homens e 2897 mulheres. Esses valores permitiram obter a densidade populacional por domicílio para <em>estimativa</em> do total de habitantes.',
+            align: 'justify',
+            verticalAlign: 'bottom',
             y: 5 
         },
         legend: {
@@ -45,7 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
             layout: 'vertical',
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.y} ({point.percentage:.1f}%)</b>'
+            pointFormat: '{series.name}: <b>{point.y:,.0f} ({point.percentage:.1f}%)</b>',
+            valueDecimals: 0,
+            valueSuffix: '',
+            valueThousandsSep: '.',
+            valueDecimalPoint: ','
         },
         plotOptions: {
             pie: {
@@ -54,7 +57,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}:<br>{point.percentage:.2f}%<br>{point.y} 👤'
+                    formatter: function () {
+                        return this.point.name + ':<br>' +
+                            Highcharts.numberFormat(this.point.percentage, 2, ',', '.') + '%<br>' +
+                            Highcharts.numberFormat(this.point.y, 0, ',', '.') + ' 👤';
+                    }
                 },
                 showInLegend: true
             }
@@ -70,11 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
         credits: {
             enabled: true,
             href:"https://bomjardimdeminas.mg.gov.br",
-                text:"Fonte: Censo Municipal 2025",
-                style:{
-                    color:"#000",
-                    fontSize: "0.6em",
-                }
+            text:"Fonte: Censo Municipal 2025",
+            style:{
+                color:"#000",
+                fontSize: "0.6em",
+            }
         }
     });
 });

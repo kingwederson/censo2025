@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    Highcharts.chart('grafico-pie_saude', {
+    Highcharts.chart('grafico-pie_avaliacao-dos-servidores', {
         chart: {
             type: 'pie',
             events: {
@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     const chart = this;
                     const series = chart.series[0];
                     const total = series.data.reduce((sum, point) => sum + point.y, 0);
-                    const textX = chart.plotWidth / 2 + chart.plotLeft;
-                    const textY = chart.plotHeight / 2 + chart.plotTop;
+                    const textX = chart.plotWidth / 1.9 + chart.plotLeft;
+                    const textY = chart.plotHeight / 1.8 + chart.plotTop;
 
                     if (chart.totalLabel) {
                         chart.totalLabel.destroy();
@@ -30,10 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         title: {
-            text: 'Censo 2025: Avaliação da gestão na pasta de Saúde'
+            text: 'Censo 2025: Avaliação do trabalho dos servidores públicos municipais'
         },
         subtitle: {
-            text: 'Como os representantes dos domicílios avaliam a gestão na pasta de Saúde?'
+            text: 'Resposta por número de domicílos',
+            align: 'justify',        // esquerda, centro ou direita
+            verticalAlign: 'bottom',// posiciona embaixo do gráfico
+            y: 5 
         },
         legend: {
             align: 'left',
@@ -50,19 +53,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: 'pointer',
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}:<br>{point.percentage:.2f}%'
+                    format: '<span style="font-size:1.2em">{point.name}</span>:<br><span style="font-size:1.5em">{point.percentage:.2f}%</span>'
                 },
                 showInLegend: true
             }
         },
         series: [{
-            name: 'Moradias',
+            name: 'Habitantes',
             colorByPoint: true,
             data: [
-                { name: 'Ótimo', y: 535,color: '#198bfb' },
-                { name: 'Bom', y: 1346, color: '#19fb8b' },
-                { name: 'Regular', y: 382, color: '#e1fb19' },
-                { name: 'Péssimo', y: 47, color: '#e11b19' },
+                { name: 'Ótimo', y: 698,color: '#198bfb' },
+                { name: 'Bom', y: 1378, color: '#19fb8b' },
+                { name: 'Regular', y: 212, color: '#e1fb19' },
+                { name: 'Péssimo', y: 22, color: '#e11b19' },
                 { name: 'Não responderam', y: 355, color: '#000' }
             ]
         }],
