@@ -3,7 +3,7 @@ Highcharts.chart('grafico-bar_bairros-proporcionais', {
         type: 'pie'
     },
     title: {
-        text: 'Censo 2025: População por localização'
+        text: 'Censo 2025: População por localidade'
     },
     subtitle: {
         text: 'Proporção de residentes por localidade.'
@@ -50,7 +50,7 @@ Highcharts.chart('grafico-bar_bairros-proporcionais', {
             { name: 'Várzea', y: 714 },
             { name: 'Vila dos Franceses', y: 335 },
             { name: 'Vila Formosa', y: 409 },
-            { name: 'Zona Rural', y: 636 }
+            { name: 'Zona Rural', y: 636+69 }
         ]
     }]
 });

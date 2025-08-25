@@ -3,7 +3,7 @@ Highcharts.chart('grafico-bar_bairros', {
         type: 'bar' // Altere para barras horizontais
     },
     title: {
-        text: 'Censo 2025: População por localização'
+        text: 'Censo 2025: População por localidade'
     },
     subtitle: {
         text: 'Quantidade de residentes por localidade.'
@@ -75,7 +75,7 @@ Highcharts.chart('grafico-bar_bairros', {
             714,    // Várzea
             335,    // Vila dos Franceses
             409,    // Vila Formosa
-            636     // Zona Rural
+            636+69  // Zona Rural
         ]
     }]
 });
